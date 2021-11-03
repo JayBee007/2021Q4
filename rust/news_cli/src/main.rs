@@ -1,30 +1,13 @@
 use std::error::Error;
-use ureq::get;
-use serde::{Deserialize};
+use std::env;
 use colour::{dark_green, yellow};
 use dotenv::dotenv;
-use std::env;
+
+use newsapi::{ get_articles, Articles };
 
 const API_KEY: &str = "API_KEY";
 
-#[derive(Debug, Deserialize)]
-struct Article {
-    title: String,
-    url: String
-}
 
-#[derive(Debug, Deserialize)]
-struct Articles{
-    articles: Vec<Article>
-}
-
-fn get_articles(url: String) -> Result<Articles, Box<dyn Error>> {
-    let response = get(&url).call()?.into_string()?;
-
-    let articles:Articles = serde_json::from_str(&response)?;
-
-    Ok(articles)
-}
 
 fn render_articles(articles: &Articles) {
     for article in &articles.articles {
