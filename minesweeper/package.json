@@ -1,0 +1,16 @@
+{
+  "name": "minesweeper",
+  "version": "0.1.0",
+  "description": "Minesweeper using vanilla js & canvas",
+  "main": "app.js",
+  "author": "Javed",
+  "license": "MIT",
+  "private": false,
+  "source": "public/index.html",
+  "scripts": {
+    "dev": "parcel"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  }
+}
