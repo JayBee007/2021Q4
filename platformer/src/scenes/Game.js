@@ -1,5 +1,7 @@
 import Phaser from "phaser";
 
+import Hero from "../entities/Hero";
+
 import heroRun from "../assets/img/hero/run.png";
 
 class Game extends Phaser.Scene {
@@ -16,6 +18,8 @@ class Game extends Phaser.Scene {
   }
 
   create() {
+    this.cursorKeys = this.input.keyboard.createCursorKeys();
+
     this.anims.create({
       key: "hero-running",
       frameRate: 10,
@@ -26,11 +30,7 @@ class Game extends Phaser.Scene {
       repeat: -1,
     });
 
-    this.player = this.physics.add.sprite(200, 150, "hero-run-sheet");
-    this.player.anims.play("hero-running");
-    this.player.body.setCollideWorldBounds(true);
-    this.player.body.setSize(12, 40);
-    this.player.body.setOffset(12, 23);
+    this.hero = new Hero(this, 200, 150);
   }
 
   update() {}
