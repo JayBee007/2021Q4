@@ -9,4 +9,5 @@ edition = "2018"
 termimad = "0.17.0"
 crossterm = "0.21.0"
 dotenv = "0.15.0"
-newsapi = {path = "./newsapi"}
+newsapi = { path = "./newsapi", features = ["async"] }
+tokio = {version = "1.11.0", features = ["full"] }
