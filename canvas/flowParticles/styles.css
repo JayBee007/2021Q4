@@ -1,0 +1,10 @@
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(36, 121, 196),
+    rgb(157, 184, 207)
+  );
+}
