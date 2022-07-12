@@ -1,3 +1,4 @@
+import 'package:flut_exp/screens/recipe_screen.dart';
 import 'package:flutter/material.dart';
 
 import './config/palette.dart';
@@ -18,7 +19,7 @@ class MealApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSwatch().copyWith(
           secondary: Palette.paletteAccent, // Your accent color
         ),
-        canvasColor:  const Color.fromARGB(222, 255, 252, 252),
+        canvasColor:  Colors.white,
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
           bodyText1: const TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
@@ -32,7 +33,8 @@ class MealApp extends StatelessWidget {
       ),
       home: CategoriesScreen(key: key),
       routes: {
-        MealsScreen.routeName:(context) => const MealsScreen()
+        MealsScreen.routeName:(context) => const MealsScreen(),
+        RecipeScreen.routeName: (context) => const RecipeScreen()
       },
     );
   }

@@ -1,8 +1,10 @@
+import 'package:flut_exp/screens/recipe_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../models/meal.dart';
 
 class MealItem extends StatelessWidget {
+  final String id;
   final String title;
   final String imageUrl;
   final int duration;
@@ -11,6 +13,7 @@ class MealItem extends StatelessWidget {
 
   const MealItem(
       {Key? key,
+      required this.id,
       required this.title,
       required this.imageUrl,
       required this.duration,
@@ -18,10 +21,15 @@ class MealItem extends StatelessWidget {
       required this.affordability})
       : super(key: key);
 
+  _selectRecipe(ctx) {
+    Navigator.of(ctx).pushNamed(RecipeScreen.routeName,
+        arguments: RecipeScreenArguments(mealId: id));
+  }
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () => _selectRecipe(context),
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         elevation: 4,
