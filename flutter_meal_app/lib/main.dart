@@ -2,8 +2,9 @@ import 'package:flut_exp/screens/recipe_screen.dart';
 import 'package:flutter/material.dart';
 
 import './config/palette.dart';
-import './screens/categories_screen.dart';
+
 import './screens/meals_screen.dart';
+import './screens/tabs_screen.dart';
 
 void main() => runApp(const MealApp());
 
@@ -31,7 +32,7 @@ class MealApp extends StatelessWidget {
           )
         )
       ),
-      home: CategoriesScreen(key: key),
+      home: const TabScreen(),
       routes: {
         MealsScreen.routeName:(context) => const MealsScreen(),
         RecipeScreen.routeName: (context) => const RecipeScreen()
