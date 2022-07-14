@@ -5,6 +5,7 @@ import './config/palette.dart';
 
 import './screens/meals_screen.dart';
 import './screens/tabs_screen.dart';
+import 'screens/filter_screen.dart';
 
 void main() => runApp(const MealApp());
 
@@ -35,7 +36,8 @@ class MealApp extends StatelessWidget {
       home: const TabScreen(),
       routes: {
         MealsScreen.routeName:(context) => const MealsScreen(),
-        RecipeScreen.routeName: (context) => const RecipeScreen()
+        RecipeScreen.routeName: (context) => const RecipeScreen(),
+        FilterScreen.routeName: (conetxt) => const FilterScreen()
       },
     );
   }
