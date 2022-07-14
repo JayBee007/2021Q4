@@ -8,9 +8,7 @@ class CategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(title: const Text('Meal')),
-        body: GridView(
+    return GridView(
           padding: const EdgeInsets.all(25),
           gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 200,
@@ -24,6 +22,6 @@ class CategoriesScreen extends StatelessWidget {
                   title: category.title,
                   color: category.color))
               .toList(),
-        ));
+        );
   }
 }
