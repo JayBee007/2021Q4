@@ -10,6 +10,7 @@ class MealItem extends StatelessWidget {
   final int duration;
   final Complexity complexity;
   final Affordability affordability;
+  final Function removeMeal;
 
   const MealItem(
       {Key? key,
@@ -18,12 +19,17 @@ class MealItem extends StatelessWidget {
       required this.imageUrl,
       required this.duration,
       required this.complexity,
-      required this.affordability})
+      required this.affordability,
+      required this.removeMeal})
       : super(key: key);
 
   _selectRecipe(ctx) {
     Navigator.of(ctx).pushNamed(RecipeScreen.routeName,
-        arguments: RecipeScreenArguments(mealId: id));
+        arguments: RecipeScreenArguments(mealId: id)).then((mealId) => {
+          if(mealId != null){
+            removeMeal(mealId)
+          }
+        });
   }
 
   @override
