@@ -83,11 +83,19 @@ class RecipeScreen extends StatelessWidget {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (ctx, index) => ListTile(
-                    leading: CircleAvatar(backgroundColor: Colors.amber, child: Text('# ${index + 1}')),
+                    leading: CircleAvatar(
+                        backgroundColor: Colors.amber,
+                        child: Text('# ${index + 1}')),
                     title: Text(recipe.steps[index])),
                 itemCount: recipe.steps.length,
               ))
         ]),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pop(mealId);
+        },
+        child: const Icon(Icons.delete),
       ),
     );
   }
